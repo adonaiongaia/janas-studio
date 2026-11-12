@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+Name: gio-2.0
+Description: Gio metadata for AppImage bundling
+Version: 2.80.0
+Libs: -lgio-2.0
+Cflags:
+giomoduledir=/usr/lib/x86_64-linux-gnu/gio/modules
+schemasdir=/usr/share/glib-2.0/schemas

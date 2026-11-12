@@ -1,0 +1,23 @@
+node_modules
+dist
+dist-ssr
+*.local
+
+# Rust / Tauri
+src-tauri/target
+src-tauri/gen/schemas
+*.AppImage
+*.deb
+*.rpm
+*.tar.gz
+
+# Local build toolchain and artifacts
+.tools
+.screenshots
+*.log
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store

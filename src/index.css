@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-ink-950 font-sans text-slate-200 antialiased;
+  }
+
+  ::selection {
+    @apply bg-acid-400/30 text-white;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #2a3342 transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #2a3342;
+    border-radius: 9999px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #3a4558;
+  }
+
+  @keyframes progress-slide {
+    0% {
+      transform: translateX(-110%);
+    }
+    100% {
+      transform: translateX(360%);
+    }
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-white/10 bg-ink-900/80;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-white/10 bg-ink-900 px-3.5 py-2.5 text-sm text-slate-200 outline-none transition placeholder:text-slate-600 focus:border-acid-400/50 focus:ring-2 focus:ring-acid-400/10;
+  }
+
+  .label {
+    @apply text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500;
+  }
+
+  .range-acid {
+    @apply h-1.5 w-full cursor-pointer appearance-none rounded-full bg-white/10;
+  }
+
+  /* Sampling controls form their own column so a hidden capability removes
+     both its height and its gap instead of leaving a hole in the panel. */
+  .sampling-stack {
+    @apply flex flex-col gap-3;
+  }
+
+  .param-slot {
+    min-width: 0;
+  }
+
+  .hidden-param {
+    display: none !important;
+  }
+
+  .range-acid::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 9999px;
+    background: #cdf75a;
+    border: 3px solid #0b0d11;
+    box-shadow: 0 0 0 1px rgba(205, 247, 90, 0.6);
+    transition: transform 140ms ease;
+  }
+
+  .range-acid::-webkit-slider-thumb:hover {
+    transform: scale(1.08);
+  }
+
+  .range-acid::-moz-range-thumb {
+    height: 16px;
+    width: 16px;
+    border-radius: 9999px;
+    background: #cdf75a;
+    border: 3px solid #0b0d11;
+    box-shadow: 0 0 0 1px rgba(205, 247, 90, 0.6);
+  }
+
+  .progress-indeterminate {
+    animation: progress-slide 1.4s ease-in-out infinite;
+  }
+
+  .md > *:first-child {
+    margin-top: 0;
+  }
+
+  .md > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .md p {
+    @apply mb-3 text-[13.5px] leading-7 text-slate-200/90;
+  }
+
+  .md h1 {
+    @apply mb-3 mt-5 text-xl font-semibold text-white;
+  }
+
+  .md h2 {
+    @apply mb-2 mt-5 text-lg font-semibold text-white;
+  }
+
+  .md h3 {
+    @apply mb-2 mt-4 text-base font-semibold text-slate-100;
+  }
+
+  .md ul {
+    @apply mb-3 list-disc space-y-1 pl-5 text-[13.5px] leading-7;
+  }
+
+  .md ol {
+    @apply mb-3 list-decimal space-y-1 pl-5 text-[13.5px] leading-7;
+  }
+
+  .md li {
+    @apply leading-7;
+  }
+
+  .md li::marker {
+    color: #8fbf22;
+  }
+
+  .md a {
+    @apply text-acid-300 underline decoration-acid-400/40 underline-offset-2 transition hover:text-acid-200;
+  }
+
+  .md strong {
+    @apply font-semibold text-white;
+  }
+
+  .md em {
+    @apply text-slate-300;
+  }
+
+  .md code {
+    @apply rounded-md border border-white/10 bg-white/5 px-1.5 py-0.5 font-mono text-[0.82em] text-acid-200;
+  }
+
+  .md pre {
+    @apply mb-3 overflow-x-auto rounded-xl border border-white/10 bg-ink-950/80 p-4;
+  }
+
+  .md pre code {
+    @apply border-0 bg-transparent p-0 text-[12.5px] leading-6 text-slate-200;
+  }
+
+  .md blockquote {
+    @apply mb-3 border-l-2 border-acid-400/40 pl-4 text-slate-400;
+  }
+
+  .md table {
+    @apply mb-3 w-full border-collapse text-sm;
+  }
+
+  .md th {
+    @apply border-b border-white/10 px-2 py-1.5 text-left font-medium text-slate-300;
+  }
+
+  .md td {
+    @apply border-b border-white/5 px-2 py-1.5 text-slate-400;
+  }
+
+  .md hr {
+    @apply my-5 border-white/10;
+  }
+}

@@ -1,0 +1,42 @@
+import type { AppSettings } from "../types";
+
+/** Mirror of `AppSettings::default()` in the Rust settings store. The models
+ * directory is installation-specific, so callers should preserve the current
+ * value when loading these defaults into the form. */
+export const DEFAULT_APP_SETTINGS: AppSettings = {
+  engine_path: "janas-server",
+  converter_path: "janas-convert",
+  host: "127.0.0.1",
+  port: 8080,
+  models_dir: "",
+  model_path: "",
+  extra_args: "",
+  api_key: "",
+  ctx_size: 16_384,
+  cache_gib: 0,
+  mtp_mode: "auto",
+  mtp_path: "",
+  draft_path: "",
+  prompt_on: "auto",
+  reply_on: "auto",
+  drafts_on: "auto",
+  think: "auto",
+  npu_int8: false,
+  engine_mode: "auto",
+  janas_attention: "auto",
+  janas_kv_cache: "auto",
+  llama_model_path: "",
+  llama_mmproj_path: "",
+  llama_port: 8081,
+  llama_gpu_layers: 0,
+  llama_ctx_size: 16_384,
+  llama_flash_attn: "auto",
+  llama_kv_cache_k: "f16",
+  llama_kv_cache_v: "f16",
+  llama_direct_cpu_moe: false,
+  llama_cpu_threads: 0,
+  llama_extra_args: "",
+  ssd_streaming: false,
+  ssd_cache_dir: "",
+  top_k: 40,
+};

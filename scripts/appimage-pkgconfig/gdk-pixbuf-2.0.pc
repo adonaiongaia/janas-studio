@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+Name: gdk-pixbuf-2.0
+Description: gdk-pixbuf metadata for AppImage bundling
+Version: 2.42.12
+Libs: -lgdk_pixbuf-2.0
+Cflags:
+gdk_pixbuf_binarydir=/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0
+gdk_pixbuf_cache_file=/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders.cache
+gdk_pixbuf_moduledir=/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders

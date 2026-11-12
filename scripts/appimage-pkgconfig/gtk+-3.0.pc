@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/x86_64-linux-gnu
+includedir=${prefix}/include
+
+Name: gtk+-3.0
+Description: GTK3 metadata for AppImage bundling
+Version: 3.24.41
+Libs: -lgtk-3
+Cflags:
+gtk_binary_version=3.0.0

@@ -1,0 +1,42 @@
+[package]
+name = "janas-studio"
+version = "0.1.0"
+default-run = "janas-studio"
+description = "A local AI studio for the Janas inference engine"
+authors = ["Janas Studio"]
+license = "MIT"
+edition = "2021"
+rust-version = "1.77.2"
+
+[dev-dependencies]
+tauri = { version = "2", features = ["test"] }
+
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["time", "sync", "fs", "io-util", "macros", "process", "rt-multi-thread"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "rustls-tls", "charset", "http2", "multipart"] }
+base64 = "0.22"
+futures-util = "0.3"
+uuid = { version = "1", features = ["v4"] }
+thiserror = "2"
+libc = "0.2"
+shell-words = "1"
+urlencoding = "2"
+async-trait = "0.1"
+flate2 = "1"
+tar = "0.4"
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true
